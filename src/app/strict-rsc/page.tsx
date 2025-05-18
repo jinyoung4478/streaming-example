@@ -3,6 +3,10 @@ import Link from "next/link";
 import StrictRSCBoundary from "../_components/StrictRSCBoundary";
 import RSCDebugger from "../_components/RSCDebugger";
 
+// 파일 상단에 캐싱 비활성화 설정 추가
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // 순차적 지연 컴포넌트 생성
 const delays = [1000, 2000, 3000, 4000, 5000];
 

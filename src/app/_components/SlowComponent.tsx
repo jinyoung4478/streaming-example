@@ -1,11 +1,17 @@
 import { Suspense } from "react";
 
 // 느린 데이터 로딩을 시뮬레이션하는 함수
+// cache 래퍼 제거하여 매번 새로운 데이터 로드하도록 함
 async function getData(delay = 3000) {
+  // 캐싱 방지를 위한 임의의 값 추가
+  const randomId = Math.random().toString(36).substring(7);
+  console.log(`Loading data with randomId: ${randomId}`);
+
   await new Promise((resolve) => setTimeout(resolve, delay));
   return {
     message: "데이터가 로드되었습니다!",
     timestamp: new Date().toISOString(),
+    id: randomId,
   };
 }
 

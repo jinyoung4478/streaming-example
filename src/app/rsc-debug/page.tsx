@@ -2,6 +2,10 @@ import { Suspense } from "react";
 import Link from "next/link";
 import RSCDebugger from "../_components/RSCDebugger";
 
+// 파일 상단에 캐싱 비활성화 설정 추가
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // 명시적으로 느린 로딩 컴포넌트 (10초 지연)
 async function VerySlowComponent() {
   console.log("서버에서 VerySlowComponent 실행 시작");

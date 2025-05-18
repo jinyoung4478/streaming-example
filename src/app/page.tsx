@@ -1,6 +1,10 @@
 import SlowComponent from "./_components/SlowComponent";
 import Link from "next/link";
 
+// 캐싱을 비활성화하기 위한 설정
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function StreamingPage() {
   return (
     <div className="max-w-4xl mx-auto p-6">
